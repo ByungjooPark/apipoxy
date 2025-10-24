@@ -8,7 +8,6 @@ const port = 3000;
 app.get(/^\/openAPI\/.*/, async (req, res) => {
   try {
     const url = req.url.replace('/openAPI', '');
-	  console.log(url);
     const response = await axios.get(`http://openAPI.seoul.go.kr:8088${url}`);
     res.send(response.data);
   } catch (error) {
@@ -16,10 +15,9 @@ app.get(/^\/openAPI\/.*/, async (req, res) => {
   }
 });
 
-app.get(/^\/swopenAPI\/.*/, async (req, res) => {
+app.get(/^\/swopenAPI\/api\/subway\/.*/, async (req, res) => {
   try {
-    const url = req.url.replace('/swopenAPI', '');
-	  console.log(url);
+    const url = req.url.replace('/swopenAPI/api/subway', '');
     const response = await axios.get(`http://swopenAPI.seoul.go.kr/api/subway${url}`);
     res.send(response.data);
   } catch (error) {
