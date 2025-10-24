@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "* 사용 기술 (버전은 모두 latest) - express",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.12.2",
+    "cors": "^2.8.5",
     "express": "^5.1.0"
   }
 }

@@ -1,9 +1,12 @@
-
-const express = require('express');
-const axios = require('axios');
+import express from 'express'; // express 모듈을 가져오기
+import axios from 'axios';
+import cors from 'cors';
+import { corsConfig } from './configs/cors.config.js';
 
 const app = express();
 const port = 3000;
+
+app.use(cors(corsConfig));
 
 app.get(/^\/openAPI\/.*/, async (req, res) => {
   try {
