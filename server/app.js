@@ -17,8 +17,8 @@ app.get(/^\/openAPI\/.*/, async (req, res) => {
 
 app.get(/^\/swopenAPI\/api\/subway\/.*/, async (req, res) => {
   try {
-    const url = req.url.replace('/swopenAPI/api/subway', '');
-    const response = await axios.get(`http://swopenAPI.seoul.go.kr/api/subway${url}`);
+    const url = req.url.replace('/swopenAPI', '');
+    const response = await axios.get(`http://swopenAPI.seoul.go.kr${url}`);
     res.send(response.data);
   } catch (error) {
     res.status(error.response ? error.response.status : 500).send(error.message);
